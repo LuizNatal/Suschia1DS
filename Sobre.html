@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Sobre.com</title>
+        <link rel="stylesheet" href="dustyles (1).css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    </head>
+    <body>
+
+        <!--Inicio do about-->
+
+        <section class="max-width bg" id="about">
+            <div class="container">
+                <div class="content">
+                    <div class="menu">
+                        <div class="desktop-menu">
+                            <ul>
+                                <li><a href="file:///C:/Users/meu%20micro/Desktop/Projeto%20int%201DS/index.html.html">HOME</a></li>
+                                <li><a href="file:///C:/Users/meu%20micro/Desktop/Projeto%20int%201DS/Sobre.html">SOBRE</a></li>
+                                <li><a href="file:///C:/Users/meu%20micro/Desktop/Projeto%20int%201DS/Servi%C3%A7os.html">NOSSOS SERVIÇOS</a></li>
+                                <li><a href="file:///C:/Users/meu%20micro/Desktop/Projeto%20int%201DS/Projeto.html">MENU</a></li>
+                                <li><a href="file:///C:/Users/meu%20micro/Desktop/Projeto%20int%201DS/Unidades.html">NOSSAS UNIDADES</a></li>
+                            </ul>
+                        </div>
+                        <div class="mobile-menu" onclick="myFuction()">
+                            <i class="fa-solid fa-bars color-preto"></i>
+                            <ul id="myLinks">
+                                <li><a href="file:///C:/Users/meu%20micro/Desktop/Projeto%20int%201DS/index.html.html">HOME</a></li>
+                                <li><a href="file:///C:/Users/meu%20micro/Desktop/Projeto%20int%201DS/Sobre.html">SOBRE</a></li>
+                                <li><a href="file:///C:/Users/meu%20micro/Desktop/Projeto%20int%201DS/Servi%C3%A7os.html">NOSSOS SERVIÇOS</a></li>
+                                <li><a href="file:///C:/Users/meu%20micro/Desktop/Projeto%20int%201DS/Projeto.html">MENU</a></li>
+                                <li><a href="file:///C:/Users/meu%20micro/Desktop/Projeto%20int%201DS/Unidades.html">NOSSAS UNIDADES</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                <div class="titulo">
+                    <span class="text-title color-vermelho">SOBRE</span>
+                    <h2 class="text-md color-preto">Conheça nossa origem</h2>
+                </div>
+                    <div class="down">
+                    <div class="left">
+                        <span class="text-title color-vermelho">O Suschia</span>
+                        <p class="text-md" id="bord">O Suschia nasceu no ano de 2008 no bairro de Santo Amaro, foi fundada por Marcelo Ferreira, Luiza Stella e Alexandre Neves com o objetivo de trazer a qualidade e o verdadeiro sabor japones nos nossos produtos. Hoje o Suschia é o especialista em encantar paladares com a culinária japonesa, juntamente com os tradicionais temakis, sushis, bananas flambadas e muito mais e isso resulta da empresa ocupar o top 2 dos melhores restaurantes japoneses do Brasil, sendo que estamos no mercado há somente 16 anos.</p>
+                    </div>
+                    <div class="right">
+                        <section id="carrossel">
+                            <img id="img_sslide" name="slide" src="Consolacao1.jpg" />
+                            <form id="botoes_slide">
+                                <input type="radio" id="v1" name="m" onClick="Muda(1)"/>Santo Amaro
+                                <input type="radio" id="v2" name="m" onClick="Muda(2)"/>Lapa
+                                <input type="radio" id="v3" name="m" onClick="Muda(3)"/>Vila Prudente
+                            </form>
+                        </section>
+                    </div>
+                </div>
+
+            </div>
+            <script>
+                function myFuction(){
+                var x = document.getElementById("myLinks")
+                if (x.style.display === "block"){
+                    x.style.display = "none";
+                }else{
+                    x.style.display = "block"
+                }
+               }
+
+               var contador = 1; //variável pública criada fora da function
+		var img1="Consolacao1.jpg";
+		var img2="Consolacao2.webp";
+		var img3="Consolacao3.jpg";
+		var tempo=2000; //2000(milessegundos) : 1000 (milessegundo) = 2s
+		var exibir=setInterval("Exibindo()",tempo);
+		 // Inicia o looping trocando imagens de 2s em 2s
+	  
+		function Exibindo() 
+		{  
+			document.images["slide"].src=eval("img"+contador); 
+			document.getElementById("v"+contador).checked=true;
+				  
+			if (contador<3)
+				contador++; /*contador=contador+1;*/
+			else
+				contador=1;
+		}
+				
+	 	function Muda(bt)
+		{
+			clearInterval(exibir);//interrompe o que está rodando no setInterval
+			contador=bt;
+			exibir=setInterval("Exibindo()",tempo); //recomeçar o looping
+		}
+            </script>
+        </section>
+        
+    </body>
+</html>
